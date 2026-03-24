@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Akinpelu Babatunde (Dr. B.) | Crowland Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .profile-header {
+        padding: 5rem 0;
+        background: var(--bg-light);
+        position: relative;
+        overflow: hidden;
+      }
+      .profile-container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .profile-image-wrapper {
+        position: relative;
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+      .profile-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .profile-content h1 {
+        font-family: var(--font-brand);
+        font-size: 3.5rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      .profile-designation {
+        font-size: 1.25rem;
+        color: var(--secondary);
+        font-weight: 600;
+        margin-bottom: 2rem;
+        display: block;
+      }
+      .profile-bio {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+      }
+      .profile-bio p {
+        margin-bottom: 1.5rem;
+      }
+      .back-btn {
+        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .back-btn:hover {
+        transform: translateX(-5px);
+      }
+      @media (max-width: 992px) {
+        .profile-container { grid-template-columns: 1fr; gap: 2rem; }
+        .profile-content h1 { font-size: 2.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grainy-overlay"></div>
+    
+    <nav class="navbar scrolled">
+      <div class="nav-container container">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Crowland Medical Centre" class="logo-img" />
+          <span>Crowland Medical Centre</span>
+        </a>
+        <a href="/" class="btn btn-outline">Back to Home</a>
+      </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+      <section class="profile-header">
+        <div class="container">
+          <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+          <div class="profile-container">
+            <div class="profile-image-wrapper">
+              <img src="/dr-b.png" alt="Dr. Akinpelu Babatunde">
+            </div>
+            <div class="profile-content">
+              <h1>Dr. Akinpelu Babatunde (Dr. B.)</h1>
+              <span class="profile-designation">MBChB, MRCGP</span>
+              <div class="profile-bio">
+                <p>Dr. Akinpelu Babatunde, MBChB, MRCGP, is a dynamic and experienced General Practitioner with a robust background in general and tropical medicine from Nigeria and complemented with a rigorous GP training and practice in the UK.</p>
+                <p>His practice emphasizes high-quality, patient-centered primary care. Dr. Babatunde is a forward-thinker, deeply invested in leveraging AI-assisted healthcare to enhance personalized patient outcomes.</p>
+                <p>As a respected leader, he serves as a Fellow with Health Education England and co-chair of the BMA East of England Forum for Racial and Ethnic Equality (FREE), mentoring and supporting international medical graduates and influencing healthcare policies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo">
+            <img src="/logo.png" alt="Crowland Medical Centre Logo" class="logo-img" style="height: 48px; width: auto;" />
+            <span>Crowland Medical Centre</span>
+          </a>
+          <p class="footer-desc">Delivering compassionate, patient-centered healthcare to individuals and families in our community through trust and respect.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Crowland Medical Centre. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

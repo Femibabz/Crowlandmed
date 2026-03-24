@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crowland Medical Centre | Your Health, Our Priority</title>
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Premium Font: Outfit for headings, Inter for body, Crimson Pro for brand -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <!-- Clinic Notice Banner -->
+    <div class="notice-banner">
+      <div class="container notice-content">
+        <i class="fa-solid fa-circle-check"></i>
+        <span><strong>GOOD NEWS:</strong> WE ARE CURRENTLY ACCEPTING NEW PATIENTS & WALK-INS!</span>
+        <a href="https://app.avaros.ca/av/weblink/crowlandmc" class="notice-link">Register Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Premium UI Extras -->
+    <div class="grainy-overlay"></div>
+    <div class="orbital-bg">
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container container">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Crowland Medical Centre" class="logo-img" />
+          <span>Crowland Medical Centre</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about" class="nav-link">About Us</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#doctors" class="nav-link">Doctors</a>
+          <a href="#hours" class="nav-link">Hours</a>
+          <a href="https://app.avaros.ca/av/weblink/crowlandmc" class="btn btn-primary nav-btn" target="_blank">Register Now</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container fade-in-up">
+        <span class="badge">Welcoming New Patients</span>
+        <h1 class="hero-title">Your health, <br/>our <span>priority.</span></h1>
+        <p class="hero-subtitle">Comprehensive, personalized medical care for you and your family.</p>
+        <div class="hero-actions">
+          <a href="https://app.avaros.ca/av/weblink/crowlandmc" class="btn btn-primary btn-lg" target="_blank">Register Now</a>
+          <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
+        </div>
+      </div>
+      
+      <!-- Statistics / Quick info cards floating over hero -->
+      <div class="hero-stats container fade-in-up delay-2">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="stat-info">
+            <h4>Experienced Team</h4>
+            <p>Certified professionals</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-kit-medical"></i></div>
+          <div class="stat-info">
+            <h4>Walk-ins Welcome</h4>
+            <p>Immediate attention</p>
+          </div>
+        </div>
+        <div class="stat-card active-card">
+          <div class="stat-icon"><i class="fa-solid fa-pills"></i></div>
+          <div class="stat-info">
+            <h4>On-site Pharmacy</h4>
+            <p>Quick & convenient</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+      <div class="container about-grid">
+        <div class="about-image-wrapper reveal-left">
+          <div class="about-image">
+            <img src="/doctors_team.png" alt="Our Medical Team" />
+            <div class="experience-badge">
+              <span class="number">100%</span>
+              <span class="text">Patient Focus</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <h4 class="section-subtitle">About Crowland Medical</h4>
+          <h2 class="section-title">Compassionate, Patient-Centered Healthcare</h2>
+          <p class="lead-text">Conveniently located at 390 Crowland Ave, Welland, ON, our modern, fully equipped facility brings a wide range of medical services together in one accessible location.</p>
+          <p>Our experienced and caring team of healthcare professionals is dedicated to providing personalized care that supports your well-being at every stage of life. Whether you’re looking for a reliable family doctor, need immediate attention through our walk-in services, or want the convenience of our on-site pharmacy, we’re here to ensure your healthcare experience is smooth and reassuring.</p>
+          
+          <ul class="about-features">
+            <li><i class="fa-solid fa-check-circle"></i> Modern, fully equipped facility</li>
+            <li><i class="fa-solid fa-check-circle"></i> Compassionate & personalized care</li>
+            <li><i class="fa-solid fa-check-circle"></i> Trust, respect, and quality</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding bg-light" id="services">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <h4 class="section-subtitle">Our Expertise</h4>
+          <h2 class="section-title">Comprehensive Medical Services</h2>
+          <p class="section-desc">Tailored services designed to promote your well-being and enhance your health experience all under one roof.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card reveal-up delay-1">
+            <div class="service-image-container">
+              <img src="/family_practice.png" alt="Family Practice" class="service-img" />
+            </div>
+            <h3 class="service-title">Family Practice</h3>
+            <p class="service-desc">Same-day family care — virtual consultations and walk-ins always welcome for families.</p>
+            <a href="https://app.avaros.ca/av/weblink/crowlandmc" class="service-link">Register <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card reveal-up delay-2">
+            <div class="service-image-container">
+              <img src="/pharmacy.png" alt="Pharmacy Services" class="service-img" />
+            </div>
+            <h3 class="service-title">Pharmacy Services</h3>
+            <p class="service-desc">Skip the wait — walk in for quick, convenient pharmacy service including doorstep delivery.</p>
+            <a href="https://app.avaros.ca/av/weblink/crowlandmc" class="service-link">Register <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card reveal-up delay-3">
+            <div class="service-image-container">
+              <img src="/elderly_care.png" alt="Elderly Care" class="service-img" />
+            </div>
+            <h3 class="service-title">Elderly Care</h3>
+            <p class="service-desc">Caring for elders promptly and compassionately — walk-ins directly encouraged.</p>
+            <a href="https://app.avaros.ca/av/weblink/crowlandmc" class="service-link">Register <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card reveal-up delay-4">
+            <div class="service-image-container">
+              <img src="/phlebotomy.png" alt="Phlebotomy" class="service-img" />
+            </div>
+            <h3 class="service-title">Phlebotomy</h3>
+            <p class="service-desc">On-the-spot bloodwork and diagnostics — no advanced booking needed.</p>
+            <a href="https://app.avaros.ca/av/weblink/crowlandmc" class="service-link">Register <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctors & Hours Section -->
+    <section class="doctors-hours section-padding" id="hours">
+      <div class="container doctors-grid">
+        
+        <div class="team-info reveal-left">
+          <h4 class="section-subtitle" id="doctors">Our Medical Team</h4>
+          <h2 class="section-title">Meet Your Trusted Healthcare Professionals</h2>
+          <p>Our healthcare team is made up of highly skilled, certified, and experienced professionals deeply committed to delivering exceptional, patient-centered care. We bring a wealth of knowledge to ensure your unique health needs are met with empathy, respect, and professionalism.</p>
+          
+          <!-- Doctor 1 (Dr. B) -->
+          <a href="/dr-b.html" class="doctor-card reveal-up">
+            <div class="doctor-avatar-circle">
+              <img src="/dr-b.png" alt="Dr. B" />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">Dr. B</h3>
+              <p class="doctor-role">Lead Physician</p>
+            </div>
+          </a>
+
+          <!-- Doctor 2 (Dr. Deji) -->
+          <a href="/dr-deji.html" class="doctor-card reveal-up delay-1">
+            <div class="doctor-avatar-circle">
+              <img src="/dr-deji.png" alt="Dr. Deji" />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">Dr. Deji</h3>
+              <p class="doctor-role">Lead Physician</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="opening-hours-wrapper reveal-right">
+          <div class="opening-hours-card">
+            <div class="card-header">
+              <h3><i class="fa-regular fa-clock"></i> Opening Hours</h3>
+            </div>
+            
+            <!-- Dr B Hours -->
+            <div class="hours-block">
+              <h4 class="doctor-name">Dr. B</h4>
+              <ul class="hours-list">
+                <li><span>Monday</span> <span>10:00 am - 6:00 pm</span></li>
+                <li><span>Tuesday</span> <span>2:00 pm - 6:00 pm</span></li>
+                <li><span>Wednesday</span> <span>10:00 am - 5:00 pm</span></li>
+                <li><span>Thursday</span> <span>3:00 pm - 6:00 pm</span></li>
+                <li><span>Friday</span> <span>10:00 am - 5:00 pm</span></li>
+                <li><span>Saturday</span> <span>10:00 am - 1:00 pm</span></li>
+                <li class="closed"><span>Sunday</span> <span>CLOSED</span></li>
+              </ul>
+            </div>
+
+            <!-- Dr Deji Hours -->
+            <div class="hours-block mt-4">
+              <h4 class="doctor-name">Dr. Deji</h4>
+              <ul class="hours-list">
+                <li><span>Mon - Fri</span> <span>10:00 am - 7:00 pm</span></li>
+                <li><span>Saturday</span> <span>10:00 am - 1:00 pm</span></li>
+                <li class="closed"><span>Sunday</span> <span>CLOSED</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo footer-logo">
+            <img src="/logo.png" alt="Crowland Medical Centre Logo" class="logo-img" style="height: 48px; width: auto;" />
+            <span>Crowland Medical Centre</span>
+          </a>
+          <p class="footer-desc">Delivering compassionate, patient-centered healthcare to individuals and families in our community through trust and respect.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/dr.b_crowland?igsh=bm96ajZ5cjVzOGF4" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@crowlandmedicalce?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#doctors">Physicians In Clinic</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>390 Crowland Ave,<br/>Welland, ON L3B 1X7</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+12894141015">+1 (289) 414-1015</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@crowlandmed.ca">info@crowlandmed.ca</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Crowland Medical Centre. All rights reserved.</p>
+          <p class="designed-by">Designed with <i class="fa-solid fa-heart" style="color: #00A896;"></i> for your health.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
