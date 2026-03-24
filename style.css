@@ -356,6 +356,7 @@ ul {
   color: white;
   transition: var(--transition-smooth);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .logo-img {
@@ -373,6 +374,7 @@ ul {
   text-transform: none; /* Changed from uppercase as requested */
   font-size: 1.4rem;
   font-family: var(--font-brand);
+  white-space: nowrap;
 }
 
 .logo i {
@@ -1019,6 +1021,7 @@ ul {
   margin-bottom: 2rem;
   color: white;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .footer-logo span {
@@ -1040,6 +1043,7 @@ ul {
 .footer-logo span {
   color: white;
   margin-left: 0.5rem;
+  white-space: nowrap;
 }
 
 .footer-desc {
