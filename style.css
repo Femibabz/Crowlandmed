@@ -358,14 +358,6 @@ ul {
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
-.navbar .logo {
-  background: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  display: inline-flex;
-  align-items: center;
-}
 
 .logo-img {
   height: 50px;
