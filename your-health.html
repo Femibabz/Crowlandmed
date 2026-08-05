@@ -137,6 +137,18 @@
       .fhg-list strong {
         color: var(--primary);
       }
+      .doctors-schedule-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 1.5rem;
+      }
+      @media (max-width: 600px) {
+        .doctors-schedule-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
       @media (max-width: 992px) {
         .health-container {
           grid-template-columns: 1fr;
@@ -180,7 +192,7 @@
             <a href="#chronic-pain" class="sidebar-link">Chronic Pain</a>
             <a href="#smoking-cessation" class="sidebar-link">Smoking Cessation</a>
             <a href="#kids-health" class="sidebar-link">Kids Health</a>
-            <a href="#after-hours" class="sidebar-link">After Hours Care</a>
+            <a href="#after-hours" class="sidebar-link">Clinic Hours</a>
           </nav>
         </aside>
 
@@ -272,16 +284,35 @@
 
           <!-- Section 8 -->
           <section id="after-hours" class="content-section">
-            <h3>Family Health Group After-Hours Services</h3>
-            <p>To access healthcare for acute medical needs after normal working hours, you can consult one of the following physicians who are part of our local Family Health Group (FHG) providing collaborative coverage. <em>Note: Visits should be for acute issues, not routine or non-essential care.</em></p>
-            <ul class="fhg-list">
-              <li><span><strong>Mondays (5:00 pm - 8:00 pm)</strong></span> <span>Dr. Khan (Intrepid Health)</span></li>
-              <li><span><strong>Tuesdays (5:00 pm - 8:00 pm)</strong></span> <span>Dr. Ahmed (Intrepid Health)</span></li>
-              <li><span><strong>Wednesdays (5:00 pm - 8:00 pm)</strong></span> <span>Dr. Richardson (Intrepid Health) or Dr. de Wet (SuperMed)</span></li>
-              <li><span><strong>Thursdays (5:00 pm - 8:00 pm)</strong></span> <span>Dr. Deji or Dr. B (Lundys Lane Medical Centre)</span></li>
-              <li><span><strong>Fridays (5:00 pm - 7:00 pm)</strong></span> <span>Dr. Azuamah (Ace Clinic)</span></li>
-              <li><span><strong>Saturdays (9:00 am - 1:00 pm)</strong></span> <span>Dr. Afolabi (Intrepid Health)</span></li>
-            </ul>
+            <h3>Clinic Physicians & Operating Hours</h3>
+            <p>Our physicians, Dr. Akinpelu Babatunde (Dr. B) and Dr. Adedeji Adekunle Makanjuola (Dr. Deji), are available during the following hours:</p>
+            
+            <div class="doctors-schedule-grid">
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. B</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span>10:00 am - 6:00 pm</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span>2:00 pm - 6:00 pm</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span>10:00 am - 5:00 pm</span></li>
+                  <li><span><strong>Thursday</strong></span> <span>3:00 pm - 6:00 pm</span></li>
+                  <li><span><strong>Friday</strong></span> <span>10:00 am - 5:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>10:00 am - 1:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Deji</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span>10:00 am - 7:00 pm</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span>10:00 am - 7:00 pm</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span>10:00 am - 7:00 pm</span></li>
+                  <li><span><strong>Thursday</strong></span> <span>10:00 am - 7:00 pm</span></li>
+                  <li><span><strong>Friday</strong></span> <span>10:00 am - 7:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>10:00 am - 1:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                </ul>
+              </div>
+            </div>
           </section>
         </div>
       </div>
