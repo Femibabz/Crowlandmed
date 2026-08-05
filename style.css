@@ -530,13 +530,25 @@ ul {
   position: absolute;
   bottom: -50px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 30px);
   width: 90%;
   max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   z-index: 10;
+}
+
+.hero-stats.fade-in-up {
+  transform: translate(-50%, 30px);
+  animation: fadeInUpCentered 0.8s ease forwards;
+}
+
+@keyframes fadeInUpCentered {
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 .stat-card {
@@ -1253,8 +1265,14 @@ ul {
   .hero-stats {
     position: relative;
     bottom: 0;
+    left: auto;
+    transform: translateY(30px);
     grid-template-columns: 1fr;
     margin-top: 3rem;
+  }
+  
+  .hero-stats.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
   }
   
   .hero {
