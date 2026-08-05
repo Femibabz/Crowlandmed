@@ -1,18 +1,34 @@
-// Navbar scroll effect
+// Navbar scroll & position effect with notice banner support
 const navbar = document.getElementById('navbar');
+const noticeBanner = document.querySelector('.notice-banner');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
+function adjustNavbarPosition() {
+  if (!navbar) return;
+  
+  if (noticeBanner) {
+    const bannerHeight = noticeBanner.offsetHeight;
+    if (window.scrollY > bannerHeight) {
+      navbar.style.top = '0';
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.style.top = `${bannerHeight - window.scrollY}px`;
+      navbar.classList.remove('scrolled');
+    }
   } else {
-    navbar.classList.remove('scrolled');
+    navbar.style.top = '0';
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
   }
-});
-
-// Initial check on load
-if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
 }
+
+window.addEventListener('scroll', adjustNavbarPosition);
+window.addEventListener('resize', adjustNavbarPosition);
+document.addEventListener('DOMContentLoaded', adjustNavbarPosition);
+window.addEventListener('load', adjustNavbarPosition);
+adjustNavbarPosition();
 
 // Mobile Menu Toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
