@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Health Resources | Lundys Lane Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .health-header {
+        padding: 3rem 0;
+        background: var(--bg-light);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+      .health-title {
+        font-family: var(--font-brand);
+        font-size: 3rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      .health-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+      }
+      .health-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+        margin-top: 3rem;
+        align-items: start;
+      }
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(0,0,0,0.05);
+      }
+      .sidebar-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .sidebar-link {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        color: var(--text-main);
+        font-weight: 500;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .sidebar-link:hover, .sidebar-link.active {
+        background: rgba(38, 34, 97, 0.05);
+        color: var(--primary);
+      }
+      .content-area {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-bottom: 5rem;
+      }
+      .content-section {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(0,0,0,0.03);
+        scroll-margin-top: 100px;
+      }
+      .content-section h3 {
+        font-family: var(--font-brand);
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 1.25rem;
+        border-left: 4px solid var(--secondary);
+        padding-left: 0.75rem;
+      }
+      .content-section p {
+        margin-bottom: 1.25rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+      }
+      .resource-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .resource-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--secondary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .resource-link:hover {
+        color: var(--primary);
+        transform: translateX(3px);
+      }
+      .back-btn {
+        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .back-btn:hover {
+        transform: translateX(-5px);
+      }
+      .fhg-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+      }
+      .fhg-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-between;
+      }
+      .fhg-list li:last-child {
+        border-bottom: none;
+      }
+      .fhg-list strong {
+        color: var(--primary);
+      }
+      @media (max-width: 992px) {
+        .health-container {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: relative;
+          top: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grainy-overlay"></div>
+    
+    <nav class="navbar scrolled">
+      <div class="nav-container container">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Lundys Lane Medical Centre" class="logo-img" />
+        </a>
+      </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+      <section class="health-header">
+        <div class="container">
+          <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+          <h1 class="health-title">Your Health Resources</h1>
+          <p class="health-subtitle">Evidence-based clinical guidelines, patient education, and support tools to empower your wellness journey.</p>
+        </div>
+      </section>
+
+      <div class="container health-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+          <nav class="sidebar-menu">
+            <a href="#choosing-wisely" class="sidebar-link active">Choosing Wisely</a>
+            <a href="#deprescribing" class="sidebar-link">Deprescribing</a>
+            <a href="#metabolic-health" class="sidebar-link">Metabolic Health</a>
+            <a href="#mental-health" class="sidebar-link">Mental Health</a>
+            <a href="#chronic-pain" class="sidebar-link">Chronic Pain</a>
+            <a href="#smoking-cessation" class="sidebar-link">Smoking Cessation</a>
+            <a href="#kids-health" class="sidebar-link">Kids Health</a>
+            <a href="#after-hours" class="sidebar-link">After Hours Care</a>
+          </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content-area">
+          <!-- Section 1 -->
+          <section id="choosing-wisely" class="content-section">
+            <h3>Choosing Wisely Canada</h3>
+            <p>Learn how to receive the best care through evidence-based information, reducing potentially harmful or wasteful investigations and practices, and focusing resources on what truly works.</p>
+            <div class="resource-links">
+              <a href="https://choosingwiselycanada.org/more-is-not-always-better/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> More is Not Always Better <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://choosingwiselycanada.org/patient-pamphlets" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Patient Pamphlets <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 2 -->
+          <section id="deprescribing" class="content-section">
+            <h3>Medication Safety & Deprescribing</h3>
+            <p>The Canadian Deprescribing Network is dedicated to raising awareness of medication safety, deprescribing, and safer alternatives to risky medications. Deprescribing is the process of safely reducing or stopping medications that may no longer be needed or may be causing harm.</p>
+            <div class="resource-links">
+              <a href="https://www.deprescribingnetwork.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Canadian Deprescribing Network <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 3 -->
+          <section id="metabolic-health" class="content-section">
+            <h3>Metabolic Health & Diabetes</h3>
+            <p>Access guidelines and coaching services to optimize your blood sugar, manage metabolic conditions, and learn about healthy dietary practices.</p>
+            <div class="resource-links">
+              <a href="https://www.diabetes.ca" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Diabetes Canada Website <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.torontometabolicclinic.com" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Toronto Metabolic Clinic <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic;">Suggested Reading: "Obesity Code" and "Diabetes Code" by Dr. Jason Fung, "The Pioppi Diet" by Dr. Aseem Malhotra.</p>
+          </section>
+
+          <!-- Section 4 -->
+          <section id="mental-health" class="content-section">
+            <h3>Mental Health & CBT Resources</h3>
+            <p>Cognitive Behavioural Therapy (CBT) is an effective, evidence-based approach to managing depression, anxiety, stress, and worry. Explore free programs available to Ontario residents:</p>
+            <div class="resource-links">
+              <a href="https://www.bouncebackontario.ca" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Bounce Back Ontario <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://togetherall.com" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Togetherall 24/7 Support <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.camh.ca" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> CAMH Online Resources <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <p style="margin-top: 1.25rem;"><strong>Ontario Structured Psychotherapy (OSP):</strong> Offers free, short-term, evidence-based cognitive behavioural therapy (CBT) for adults experiencing anxiety and depression.</p>
+            <p><strong>MoodGYM & MindBeacon:</strong> Cognitive behavioural therapy programs for mild-to-moderate symptoms of depression and anxiety (free for Ontario residents over 16).</p>
+            <p style="font-style: italic;">Suggested Reading: "Feeling Good: The New Mood Therapy" by David Burns, "The Worry Cure" by Robert Leahy, "Cognitive Behavioural Therapy Workbook For Dummies" by Rhena Branch & Rob Willson.</p>
+          </section>
+
+          <!-- Section 5 -->
+          <section id="chronic-pain" class="content-section">
+            <h3>Chronic Pain & Back Care</h3>
+            <p>Explore spine assessment guides, back care resources, and pain management guides to help you live a full and comfortable life.</p>
+            <div class="resource-links">
+              <a href="http://www.isaec.org" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Inter-Professional Spine Assessment Clinics <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="http://backcarecanada.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Back Care Canada <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="http://tapmipain.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> TAPMI Pain Management U Online <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.youtube.com/watch?v=BOjTegn9RuY" class="resource-link" target="_blank"><i class="fa-solid fa-video"></i> Low Back Pain Video by Dr. Mike Evans <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <p style="margin-top: 1.25rem;"><strong>Opioid Safety & Stewardship:</strong> Learn about the potential risks associated with opioids and access taper guidance:</p>
+            <div class="resource-links">
+              <a href="https://www.rxfiles.ca/rxfiles/uploads/documents/Opioid-Patient-Booklet-Taper-RxFiles.pdf" class="resource-link" target="_blank"><i class="fa-solid fa-file-pdf"></i> Opioid Patient Taper Booklet <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.ontario.ca/page/understanding-opioids" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Understanding Opioids Guide <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 6 -->
+          <section id="smoking-cessation" class="content-section">
+            <h3>Smoking Cessation</h3>
+            <p>Access free support systems, nicotine patches, and coaching programs to help you quit smoking successfully:</p>
+            <div class="resource-links">
+              <a href="https://www.ontario.ca/page/support-quit-smoking" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Ontario Smoking Cessation Services <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.nicotinedependenceclinic.com/en/stop/stop-on-the-net" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> STOP on the Net <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.niagararegion.ca/health/substances/tobacco/quitting-smoking.aspx" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Niagara Region Tobacco Services <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 7 -->
+          <section id="kids-health" class="content-section">
+            <h3>Kids & Family Health</h3>
+            <p>Trusted resources for child development, infant care, pediatric health, and injury prevention:</p>
+            <div class="resource-links">
+              <a href="https://www.caringforkids.cps.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Caring for Kids (Cdn Paediatric Society) <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.aboutkidshealth.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> AboutKidsHealth (SickKids) <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="http://www.rourkebabyrecord.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Rourke Baby Record <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://parachute.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Parachute Injury Prevention <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 8 -->
+          <section id="after-hours" class="content-section">
+            <h3>Family Health Group After-Hours Services</h3>
+            <p>To access healthcare for acute medical needs after normal working hours, you can consult one of the following physicians who are part of our local Family Health Group (FHG) providing collaborative coverage. <em>Note: Visits should be for acute issues, not routine or non-essential care.</em></p>
+            <ul class="fhg-list">
+              <li><span><strong>Mondays (5:00 pm - 8:00 pm)</strong></span> <span>Dr. Khan (Intrepid Health)</span></li>
+              <li><span><strong>Tuesdays (5:00 pm - 8:00 pm)</strong></span> <span>Dr. Ahmed (Intrepid Health)</span></li>
+              <li><span><strong>Wednesdays (5:00 pm - 8:00 pm)</strong></span> <span>Dr. Richardson (Intrepid Health) or Dr. de Wet (SuperMed)</span></li>
+              <li><span><strong>Fridays (5:00 pm - 7:00 pm)</strong></span> <span>Dr. Azuamah (Ace Clinic)</span></li>
+              <li><span><strong>Saturdays (9:00 am - 1:00 pm)</strong></span> <span>Dr. Afolabi (Intrepid Health)</span></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo">
+            <img src="/logo.png" alt="Lundys Lane Medical Centre Logo" class="logo-img" style="height: 48px; width: auto;" />
+          </a>
+          <p class="footer-desc">Delivering compassionate, patient-centered healthcare to individuals and families in our community through trust and respect.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/your-health.html">Your Health Resources</a></li>
+            <li><a href="/patient-policies.html">Patient Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>7637 Lundys Lane,<br/>Niagara Falls, ON L2H 1H2</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+12894141015">+1 (289) 414-1015</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@lundysmed.ca">info@lundysmed.ca</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Lundys Lane Medical Centre. All rights reserved.</p>
+          <p class="designed-by">Designed with <i class="fa-solid fa-heart" style="color: #00A896;"></i> for your health.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive script to highlight active section in sidebar on scroll -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.sidebar-link');
+
+        window.addEventListener('scroll', () => {
+          let current = '';
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 120)) {
+              current = section.getAttribute('id');
+            }
+          });
+
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+              link.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
