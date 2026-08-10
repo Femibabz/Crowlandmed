@@ -363,19 +363,23 @@ ul {
 
 .logo-subtitle {
   font-family: var(--font-heading); /* Bold sans-serif matching standards. */
-  font-size: 1.55rem; /* Very large & prominent */
+  font-size: 1.45rem; /* Large & prominent */
   font-weight: 900; /* Ultra bold */
-  text-transform: uppercase; /* ALL CAPS for maximum prominence */
-  color: var(--secondary) !important; /* Brand Red matching Lundys Lane */
-  margin-left: 64px; /* Mathematically aligned with the letter L in Lundy's Lane */
-  letter-spacing: 0.04em;
+  text-transform: uppercase; /* ALL CAPS */
+  color: #ba2021 !important; /* Exact crimson red extracted from LUNDY'S LANE in logo.png */
+  margin-left: 7.5px; /* Starts right at the left edge of the heart icon */
+  width: 197px; /* Spans exact length from heart to letter E in LUNDY'S LANE */
+  text-align-last: justify; /* Justifies text flush to both ends */
+  letter-spacing: 0.08em;
   line-height: 1;
+  white-space: nowrap;
   transition: var(--transition-smooth);
 }
 
 .footer-logo .logo-subtitle {
-  margin-left: 73px; /* Mathematically aligned with letter L in footer logo */
-  font-size: 1.75rem;
+  margin-left: 8.5px;
+  width: 225px;
+  font-size: 1.65rem;
 }
 
 .logo-img {

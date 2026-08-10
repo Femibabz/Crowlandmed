@@ -17,18 +17,14 @@ while (pos < buf.length) {
 const decompressed = zlib.inflateSync(Buffer.concat(idatChunks));
 const width = 709;
 const height = 135;
-const bpp = 4; // RGBA
 
-// Scan horizontal line Y = 40
+// Find row Y = 40 (through LUNDY'S LANE)
 const row = 40;
-// Line start including 1 filter byte per row
-// Note: PNG rows have a filter byte at index 0 of each row
-// But inflateSync returns un-filtered rows if filter is 0, let's just inspect raw bytes
 let lineStart = row * (width * 4 + 1) + 1;
 
 let textStart = -1;
-let iconStart = -1;
-let iconEnd = -1;
+let textEnd = -1;
+let textR = 0, textG = 0, textB = 0, samples = 0;
 
 for (let x = 0; x < width; x++) {
   const r = decompressed[lineStart + x * 4];
@@ -36,18 +32,39 @@ for (let x = 0; x < width; x++) {
   const b = decompressed[lineStart + x * 4 + 2];
   const a = decompressed[lineStart + x * 4 + 3];
 
-  if (a > 100) {
-    if (iconStart === -1) {
-      iconStart = x;
-    }
-    if (iconEnd !== -1 && textStart === -1 && x > 200) {
-      textStart = x;
-    }
-  } else {
-    if (iconStart !== -1 && iconEnd === -1 && x > 100) {
-      iconEnd = x;
-    }
+  if (a > 200 && r > 120 && g < 50 && b < 50) { // Red pixel of LUNDY'S LANE
+    if (textStart === -1) textStart = x;
+    textEnd = x;
+    textR += r;
+    textG += g;
+    textB += b;
+    samples++;
   }
 }
 
-console.log('Result:', { width, height, iconStart, iconEnd, textStart });
+// Find heart start row Y = 50
+let heartStart = -1;
+const heartRow = 50;
+let heartLineStart = heartRow * (width * 4 + 1) + 1;
+for (let x = 0; x < width; x++) {
+  const a = decompressed[heartLineStart + x * 4 + 3];
+  if (a > 100) {
+    heartStart = x;
+    break;
+  }
+}
+
+const avgR = Math.round(textR / samples);
+const avgG = Math.round(textG / samples);
+const avgB = Math.round(textB / samples);
+
+const hex = '#' + [avgR, avgG, avgB].map(v => v.toString(16).padStart(2, '0')).join('');
+
+console.log({
+  width,
+  height,
+  heartStart, // Start of heart icon
+  textStart,  // Start of L in LUNDY'S
+  textEnd,    // End of E in LANE
+  hexColor: hex
+});
