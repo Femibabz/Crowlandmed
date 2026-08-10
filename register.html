@@ -205,7 +205,7 @@
               <p class="form-subtitle">Fill in the form below to request registration as a new patient. Once submitted, our clinic staff will review your request and get back to you shortly.</p>
               
               <!-- Form -->
-              <form id="registration-form" method="POST">
+              <form id="registration-form" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Web3Forms Integration -->
                 <!-- Note: Access Key configures where the email is sent -->
                 <input type="hidden" name="access_key" value="0cc7e992-436e-48cf-a566-fa3094d50add" />
@@ -422,6 +422,9 @@
             alert(`Oops! Something went wrong: ${error.message}. Please try again later or call us directly.`);
             submitBtn.disabled = false;
             submitBtn.innerHTML = `<span>Submit Registration</span> <i class="fa-solid fa-paper-plane"></i>`;
+          }
+        });
+
         // Address Autocomplete using Nominatim OpenStreetMap API
         const addressInput = document.getElementById('address');
         const suggestionsBox = document.getElementById('address-suggestions');
