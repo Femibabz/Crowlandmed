@@ -365,7 +365,7 @@ ul {
   font-family: var(--font-brand);
   font-size: 1.4rem;
   font-weight: 900; /* Bolder */
-  color: var(--secondary); /* Red matching logo */
+  color: var(--secondary) !important; /* Force red color over descendant span selectors */
   letter-spacing: 0.02em;
   line-height: 1;
   transition: var(--transition-smooth);
@@ -381,13 +381,7 @@ ul {
   transform: scale(0.9);
 }
 
-.logo span {
-  color: var(--primary); /* Changed to primary Blue for better branding */
-  text-transform: none; /* Changed from uppercase as requested */
-  font-size: 1.4rem;
-  font-family: var(--font-brand);
-  white-space: nowrap;
-}
+/* Removed competing legacy logo span style */
 
 .logo i {
   color: white;
