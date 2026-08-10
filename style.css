@@ -362,29 +362,26 @@ ul {
 }
 
 .logo-subtitle {
-  font-family: var(--font-heading); /* Sans-serif font (Outfit) like standards */
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-family: var(--font-heading); /* Bold sans-serif matching standards. */
+  font-size: 1.55rem; /* Very large & prominent */
+  font-weight: 900; /* Ultra bold */
+  text-transform: uppercase; /* ALL CAPS for maximum prominence */
   color: var(--secondary) !important; /* Brand Red matching Lundys Lane */
-  margin-left: 54px; /* Aligned with L in Lundys Lane */
-  letter-spacing: 0.02em;
+  margin-left: 64px; /* Mathematically aligned with the letter L in Lundy's Lane */
+  letter-spacing: 0.04em;
   line-height: 1;
   transition: var(--transition-smooth);
 }
 
 .footer-logo .logo-subtitle {
-  margin-left: 62px; /* Aligned with L in footer logo */
-  font-size: 1.45rem;
+  margin-left: 73px; /* Mathematically aligned with letter L in footer logo */
+  font-size: 1.75rem;
 }
 
 .logo-img {
   height: 42px;
   width: auto;
   transition: var(--transition-smooth);
-}
-
-.navbar.scrolled .logo-img {
-  transform: scale(0.9);
 }
 
 /* Removed competing legacy logo span style */
