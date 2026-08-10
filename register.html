@@ -220,9 +220,10 @@
                   <input type="text" id="fullname" name="fullname" class="form-control" placeholder="John Doe" required />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="position: relative;">
                   <label class="form-label" for="address">Full Physical Address *</label>
-                  <input type="text" id="address" name="address" class="form-control" placeholder="7637 Lundys Lane, Niagara Falls, ON L2H 1H2" required />
+                  <input type="text" id="address" name="address" class="form-control" placeholder="Enter your physical address (e.g. 123 Main St, Niagara Falls)" autocomplete="street-address" required />
+                  <div id="address-suggestions" class="address-suggestions"></div>
                 </div>
 
                 <div class="form-group">
@@ -252,7 +253,16 @@
 
                 <div class="form-group">
                   <label class="form-label" for="reason">Reason for Consultation *</label>
-                  <textarea id="reason" name="reason" rows="4" class="form-control" placeholder="Please describe briefly the reason you are seeking consultation..." required></textarea>
+                  <select id="reason" name="reason" class="form-control" required>
+                    <option value="" disabled selected>Select reason for consultation...</option>
+                    <option value="Meet and Greet">Meet and Greet</option>
+                    <option value="Clinical Assessment">Clinical Assessment</option>
+                    <option value="Immunization/Vaccination Needs">Immunization/Vaccination Needs</option>
+                    <option value="Phlebotomy">Phlebotomy</option>
+                    <option value="Driver's Licenses renewal">Driver's Licenses renewal</option>
+                    <option value="Administrative form processing (WSIB, Special Diet Form, etc)">Administrative form processing (WSIB, Special Diet Form, etc)</option>
+                    <option value="Others">Others</option>
+                  </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
@@ -280,7 +290,7 @@
               <ul>
                 <li>Our administration team receives and reviews your request within 24–48 business hours.</li>
                 <li>We will call you on your phone number during your selected preferred times.</li>
-                <li>We will set up an intake appointment to complete the medical registration files.</li>
+                <li>We will set up an intake appointment to complete the meet and greet consultation.</li>
               </ul>
             </div>
 
@@ -412,8 +422,50 @@
             alert(`Oops! Something went wrong: ${error.message}. Please try again later or call us directly.`);
             submitBtn.disabled = false;
             submitBtn.innerHTML = `<span>Submit Registration</span> <i class="fa-solid fa-paper-plane"></i>`;
-          }
-        });
+        // Address Autocomplete using Nominatim OpenStreetMap API
+        const addressInput = document.getElementById('address');
+        const suggestionsBox = document.getElementById('address-suggestions');
+        let debounceTimer;
+
+        if (addressInput && suggestionsBox) {
+          addressInput.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            const query = e.target.value.trim();
+            if (query.length < 3) {
+              suggestionsBox.style.display = 'none';
+              suggestionsBox.innerHTML = '';
+              return;
+            }
+
+            debounceTimer = setTimeout(async () => {
+              try {
+                const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=ca&limit=5`);
+                const data = await res.json();
+                if (data && data.length > 0) {
+                  suggestionsBox.innerHTML = data.map(item => `<div class="address-suggestion-item">${item.display_name}</div>`).join('');
+                  suggestionsBox.style.display = 'block';
+
+                  document.querySelectorAll('.address-suggestion-item').forEach(el => {
+                    el.addEventListener('click', () => {
+                      addressInput.value = el.textContent;
+                      suggestionsBox.style.display = 'none';
+                    });
+                  });
+                } else {
+                  suggestionsBox.style.display = 'none';
+                }
+              } catch (err) {
+                console.error('Address lookup error:', err);
+              }
+            }, 300);
+          });
+
+          document.addEventListener('click', (e) => {
+            if (!addressInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+              suggestionsBox.style.display = 'none';
+            }
+          });
+        }
       });
     </script>
   </body>

@@ -286,7 +286,7 @@
           <!-- Section 8 -->
           <section id="after-hours" class="content-section">
             <h3>Clinic Physicians & Operating Hours</h3>
-            <p>Our physicians, Dr. Akinpelu Babatunde (Dr. B) and Dr. Adedeji Adekunle Makanjuola (Dr. Deji), are available during the following hours:</p>
+            <p>Our physicians, Dr. Akinpelu Babatunde (Dr. B), Dr. Bayo, and Dr. Jane Doe, are available during the following hours:</p>
             
             <div class="doctors-schedule-grid">
               <div>
@@ -302,15 +302,27 @@
                 </ul>
               </div>
               <div>
-                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Deji</h4>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Bayo</h4>
                 <ul class="fhg-list" style="margin: 0;">
-                  <li><span><strong>Monday</strong></span> <span>10:00 am - 7:00 pm</span></li>
-                  <li><span><strong>Tuesday</strong></span> <span>10:00 am - 7:00 pm</span></li>
-                  <li><span><strong>Wednesday</strong></span> <span>10:00 am - 7:00 pm</span></li>
-                  <li><span><strong>Thursday</strong></span> <span>10:00 am - 7:00 pm</span></li>
-                  <li><span><strong>Friday</strong></span> <span>10:00 am - 7:00 pm</span></li>
-                  <li><span><strong>Saturday</strong></span> <span>10:00 am - 1:00 pm</span></li>
+                  <li><span><strong>Monday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Thursday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Friday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>9:00 am - 4:00 pm</span></li>
                   <li><span><strong>Sunday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Jane Doe</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Thursday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Friday</strong></span> <span>12:00 pm - 8:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>12:00 pm - 8:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span>1:00 pm - 5:00 pm</span></li>
                 </ul>
               </div>
             </div>
@@ -365,27 +377,45 @@
       </div>
     </footer>
 
-    <!-- Interactive script to highlight active section in sidebar on scroll -->
+    <!-- Interactive Tab-Switching Script: Only renders clicked section -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const sections = document.querySelectorAll('.content-section');
         const navLinks = document.querySelectorAll('.sidebar-link');
 
-        window.addEventListener('scroll', () => {
-          let current = '';
-          sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 120)) {
-              current = section.getAttribute('id');
-            }
-          });
+        function activateTab(targetId) {
+          const cleanId = targetId.replace('#', '');
+          let targetSection = document.getElementById(cleanId);
+          
+          if (!targetSection) {
+            targetSection = document.getElementById('choosing-wisely');
+          }
+
+          sections.forEach(section => section.classList.remove('active'));
+          navLinks.forEach(link => link.classList.remove('active'));
+
+          if (targetSection) {
+            targetSection.classList.add('active');
+          }
 
           navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
+            if (link.getAttribute('href') === `#${targetSection.id}`) {
               link.classList.add('active');
             }
+          });
+        }
+
+        // Initialize with URL hash or default to first tab
+        const initialHash = window.location.hash || '#choosing-wisely';
+        activateTab(initialHash);
+
+        // Click handler for sidebar links
+        navLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetHash = link.getAttribute('href');
+            activateTab(targetHash);
+            window.history.pushState(null, null, targetHash);
           });
         });
       });

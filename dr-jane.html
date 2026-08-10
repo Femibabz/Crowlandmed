@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Jane Doe | Lundys Lane Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .profile-header {
+        padding: 2rem 0 5rem;
+        background: var(--bg-light);
+        position: relative;
+        overflow: hidden;
+      }
+      .profile-container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .profile-image-wrapper {
+        position: relative;
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+      .profile-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .profile-content h1 {
+        font-family: var(--font-brand);
+        font-size: 3.5rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      .profile-bio {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+      }
+      .profile-bio p {
+        margin-bottom: 1.5rem;
+      }
+      .back-btn {
+        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .back-btn:hover {
+        transform: translateX(-5px);
+      }
+      @media (max-width: 992px) {
+        .profile-container { grid-template-columns: 1fr; gap: 2rem; }
+        .profile-content h1 { font-size: 2.5rem; }
+      }
+      .profile-image-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grainy-overlay"></div>
+    
+    <nav class="navbar scrolled">
+      <div class="nav-container container">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Lundys Lane Medical Centre" class="logo-img" />
+          <span class="logo-subtitle">Walk-In Clinic</span>
+        </a>
+      </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+      <section class="profile-header">
+        <div class="container">
+          <div class="profile-container">
+            <div class="profile-image-column">
+              <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+              <div class="profile-image-wrapper">
+                <img src="/dr-jane.png" alt="Dr. Jane Doe">
+              </div>
+            </div>
+            <div class="profile-content">
+              <h1>Dr. Jane Doe</h1>
+              <div class="profile-bio">
+                <p>Dr. Jane Doe is an experienced physician providing empathetic, personalized healthcare services at Lundys Lane Medical Centre.</p>
+                <p>Dedicated to supporting patient health across all stages of life, Dr. Jane Doe offers comprehensive consultations during weekend and evening hours to ensure accessible healthcare for our community.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo">
+            <img src="/logo.png" alt="Lundys Lane Medical Centre Logo" class="logo-img" style="height: 48px; width: auto;" />
+            <span class="logo-subtitle">Walk-In Clinic</span>
+          </a>
+          <p class="footer-desc">Delivering compassionate, patient-centered healthcare to individuals and families in our community through trust and respect.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#services">Our Services</a></li>
+            <li><a href="/#doctors">Physicians In Clinic</a></li>
+            <li><a href="/your-health">Your Health Resources</a></li>
+            <li><a href="/patient-policies">Patient Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>7637 Lundys Lane,<br/>Niagara Falls, ON L2H 1H2</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+12899323500">+1 (289) 932-3500</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@lundysmed.ca">info@lundysmed.ca</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Lundys Lane Medical Centre. All rights reserved.</p>
+          <p class="designed-by">Designed with <i class="fa-solid fa-heart" style="color: #00A896;"></i> for your health.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
