@@ -363,9 +363,9 @@ ul {
 
 .logo-subtitle {
   font-family: var(--font-brand);
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 900; /* Bolder */
+  color: var(--secondary); /* Red matching logo */
   letter-spacing: 0.02em;
   line-height: 1;
   transition: var(--transition-smooth);
