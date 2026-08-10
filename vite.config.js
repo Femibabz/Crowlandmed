@@ -10,6 +10,7 @@ export default defineConfig({
         dr_deji: resolve(__dirname, 'dr-deji.html'),
         your_health: resolve(__dirname, 'your-health.html'),
         patient_policies: resolve(__dirname, 'patient-policies.html'),
+        register: resolve(__dirname, 'register.html'),
       },
     },
   },

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Lundys Lane Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .register-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
+        margin: 3rem auto 6rem;
+        align-items: start;
+      }
+      .form-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 24px;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid rgba(0,0,0,0.03);
+        position: relative;
+        overflow: hidden;
+      }
+      .form-title {
+        font-family: var(--font-brand);
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      .form-subtitle {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .form-label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text-main);
+      }
+      .form-control {
+        width: 100%;
+        padding: 0.85rem 1.2rem;
+        border-radius: 12px;
+        border: 1.5px solid rgba(0,0,0,0.1);
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: var(--text-main);
+        transition: var(--transition-fast);
+        background-color: #fafafa;
+      }
+      .form-control:focus {
+        border-color: var(--primary);
+        background-color: white;
+        box-shadow: 0 0 0 4px rgba(44, 98, 176, 0.1);
+        outline: none;
+      }
+      .checkbox-group {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 0.25rem;
+      }
+      .checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        cursor: pointer;
+      }
+      .checkbox-input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+      .btn-submit {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+      .info-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .info-card {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: 20px;
+        border: 1px solid rgba(0,0,0,0.02);
+      }
+      .info-card h4 {
+        font-family: var(--font-brand);
+        font-size: 1.4rem;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .info-card h4 i {
+        color: var(--secondary);
+      }
+      .info-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin-bottom: 0;
+      }
+      .info-card ul {
+        padding-left: 1.25rem;
+        margin: 0.5rem 0 0;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      /* Success View Style */
+      .success-overlay {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 3rem 1.5rem;
+      }
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 168, 150, 0.1);
+        color: #00A896;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+      @keyframes scaleIn {
+        from { transform: scale(0); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      .success-title {
+        font-family: var(--font-brand);
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+      }
+      .success-text {
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 450px;
+      }
+      @media (max-width: 992px) {
+        .register-layout {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .form-container {
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grainy-overlay"></div>
+    
+    <nav class="navbar scrolled">
+      <div class="nav-container container">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Lundys Lane Medical Centre" class="logo-img" />
+        </a>
+      </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+      <div class="container">
+        <div class="register-layout">
+          
+          <!-- Registration Form Container -->
+          <div class="form-container">
+            <!-- Form Block -->
+            <div id="form-block">
+              <h2 class="form-title">Patient Registration</h2>
+              <p class="form-subtitle">Fill in the form below to request registration as a new patient. Once submitted, our clinic staff will review your request and get back to you shortly.</p>
+              
+              <!-- Form -->
+              <form id="registration-form" method="POST">
+                <!-- Web3Forms Integration -->
+                <!-- Note: Access Key configures where the email is sent -->
+                <input type="hidden" name="access_key" value="84f8842e-13cb-4f81-9988-cb942b0c3619" />
+                <input type="hidden" name="subject" value="New Patient Registration Request - Lundys Lane Medical Centre" />
+                <input type="hidden" name="from_name" value="Lundys Lane Patient Portal" />
+                <input type="hidden" name="replyto" id="replyto-input" />
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <div class="form-group">
+                  <label class="form-label" for="fullname">Full Name *</label>
+                  <input type="text" id="fullname" name="fullname" class="form-control" placeholder="John Doe" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="address">Full Physical Address *</label>
+                  <input type="text" id="address" name="address" class="form-control" placeholder="7637 Lundys Lane, Niagara Falls, ON L2H 1H2" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="johndoe@email.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 555-5555" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Best Call Back Time *</label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="callback_time[]" value="Morning" class="checkbox-input" /> Morning (9:00 am - 12:00 pm)
+                    </label>
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="callback_time[]" value="Afternoon" class="checkbox-input" /> Afternoon (12:00 pm - 4:00 pm)
+                    </label>
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="callback_time[]" value="Evening" class="checkbox-input" /> Evening (4:00 pm - 7:00 pm)
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="reason">Reason for Consultation *</label>
+                  <textarea id="reason" name="reason" rows="4" class="form-control" placeholder="Please describe briefly the reason you are seeking consultation..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                  <span>Submit Registration</span> <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Success Overlay Block -->
+            <div id="success-block" class="success-overlay">
+              <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <h2 class="success-title">Submission Successful!</h2>
+              <p class="success-text">Thank you for requesting registration. Your information has been securely transmitted to our administrative office at <strong>info@lundysmed.ca</strong>. A member of our staff will contact you at your preferred time.</p>
+              <a href="/" class="btn btn-outline">Return to Homepage</a>
+            </div>
+
+          </div>
+
+          <!-- Information Sidebar -->
+          <div class="info-sidebar">
+            <div class="info-card">
+              <h4><i class="fa-solid fa-circle-info"></i> What Happens Next?</h4>
+              <ul>
+                <li>Our administration team receives and reviews your request within 24–48 business hours.</li>
+                <li>We will call you on your phone number during your selected preferred times.</li>
+                <li>We will set up an intake appointment to complete the medical registration files.</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h4><i class="fa-solid fa-lock"></i> Privacy & Confidentiality</h4>
+              <p>Your health and personal information are treated with the highest level of privacy and strict confidentiality, in full compliance with PHIPA regulations in Ontario.</p>
+            </div>
+            
+            <div class="info-card">
+              <h4><i class="fa-solid fa-phone"></i> Need Assistance?</h4>
+              <p>If you encounter issues during registration or have questions, contact us directly:</p>
+              <ul style="list-style: none; padding-left: 0; margin-top: 0.5rem;">
+                <li><i class="fa-solid fa-phone" style="color: var(--secondary); margin-right: 0.5rem;"></i> <strong>+1 (289) 414-1015</strong></li>
+                <li><i class="fa-solid fa-envelope" style="color: var(--secondary); margin-right: 0.5rem;"></i> <strong>info@lundysmed.ca</strong></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo">
+            <img src="/logo.png" alt="Lundys Lane Medical Centre Logo" class="logo-img" style="height: 48px; width: auto;" />
+          </a>
+          <p class="footer-desc">Delivering compassionate, patient-centered healthcare to individuals and families in our community through trust and respect.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/your-health">Your Health Resources</a></li>
+            <li><a href="/patient-policies">Patient Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>7637 Lundys Lane,<br/>Niagara Falls, ON L2H 1H2</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+12894141015">+1 (289) 414-1015</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@lundysmed.ca">info@lundysmed.ca</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Lundys Lane Medical Centre. All rights reserved.</p>
+          <p class="designed-by">Designed with <i class="fa-solid fa-heart" style="color: #00A896;"></i> for your health.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Formspree / Web3Forms JavaScript Submitter -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('registration-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formBlock = document.getElementById('form-block');
+        const successBlock = document.getElementById('success-block');
+        const emailInput = document.getElementById('email');
+        const replytoInput = document.getElementById('replyto-input');
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          // Verify that at least one callback time is selected
+          const checkboxes = document.querySelectorAll('input[name="callback_time[]"]:checked');
+          if (checkboxes.length === 0) {
+            alert('Please select at least one preferred call back time.');
+            return;
+          }
+
+          // Link reply-to header to client email input
+          replytoInput.value = emailInput.value;
+
+          // Change button state to loading
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Sending Request...`;
+
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          
+          // Capture multi-selected checkboxes cleanly
+          const callbackTimes = [];
+          document.querySelectorAll('input[name="callback_time[]"]:checked').forEach((cb) => {
+            callbackTimes.push(cb.value);
+          });
+          object['callback_time'] = callbackTimes.join(', ');
+          delete object['callback_time[]'];
+
+          const json = JSON.stringify(object);
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: json
+            });
+
+            const result = await response.json();
+            
+            if (response.status === 200 || result.success) {
+              // Hide form, show success screen
+              formBlock.style.display = 'none';
+              successBlock.style.display = 'flex';
+            } else {
+              throw new Error(result.message || 'An error occurred during submission.');
+            }
+          } catch (error) {
+            alert(`Oops! Something went wrong: ${error.message}. Please try again later or call us directly.`);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Submit Registration</span> <i class="fa-solid fa-paper-plane"></i>`;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
