@@ -349,8 +349,8 @@ ul {
 .logo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.15rem;
+  align-items: center;
+  gap: 0.25rem;
   font-family: var(--font-brand);
   font-size: 1.75rem;
   font-weight: 700;
@@ -362,14 +362,12 @@ ul {
 }
 
 .logo-subtitle {
-  font-family: var(--font-main);
-  font-size: 0.85rem;
+  font-family: var(--font-brand);
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  color: var(--primary);
+  letter-spacing: 0.02em;
   line-height: 1;
-  margin-top: -2px;
   transition: var(--transition-smooth);
 }
 
