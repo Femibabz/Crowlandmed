@@ -546,9 +546,9 @@ ul {
   left: 50%;
   transform: translate(-50%, 30px);
   width: 90%;
-  max-width: 1000px;
+  max-width: 1140px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   z-index: 10;
 }
