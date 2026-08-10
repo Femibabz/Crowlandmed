@@ -2,17 +2,17 @@
    DESIGN SYSTEM & VARIABLES
 ========================================= */
 :root {
-  /* Premium Branding Colors (Logo Based) */
-  --primary: #2C62B0; /* Logo Blue */
-  --primary-light: #4A89DC;
-  --secondary: #E53E5B; /* Logo Red / Coral Accent */
-  --secondary-light: #FF5A76;
+  /* Premium Branding Colors (Logo Red, Burgundy, White & Black) */
+  --primary: #ba2021; /* Logo Crimson Red */
+  --primary-light: #d32f2f;
+  --secondary: #800a0c; /* Deep Burgundy Accent */
+  --secondary-light: #ba2021;
   
   --bg-color: #ffffff;
   --bg-light: #F9FAFB;
-  --bg-dark: #1F2937;
+  --bg-dark: #111827; /* Rich Jet Black */
   
-  --text-main: #1F2937;
+  --text-main: #111827; /* Solid Black */
   --text-muted: #4B5563;
   --text-light: #F9FAFB;
   
@@ -26,11 +26,11 @@
   --letter-spacing-tight: -0.03em;
   --letter-spacing-wide: 0.05em;
   
-  /* Shadows - Layered for depth */
+  /* Shadows - Layered Crimson Red */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-  --shadow-md: 0 10px 25px -5px rgba(0, 59, 115, 0.08), 0 8px 10px -6px rgba(0, 59, 115, 0.08);
-  --shadow-lg: 0 20px 50px -12px rgba(0, 59, 115, 0.12), 0 15px 20px -10px rgba(0, 59, 115, 0.1);
-  --shadow-glass: 0 8px 32px 0 rgba(0, 59, 115, 0.1);
+  --shadow-md: 0 10px 25px -5px rgba(186, 32, 33, 0.08), 0 8px 10px -6px rgba(186, 32, 33, 0.08);
+  --shadow-lg: 0 20px 50px -12px rgba(186, 32, 33, 0.12), 0 15px 20px -10px rgba(186, 32, 33, 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(186, 32, 33, 0.1);
   
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -233,34 +233,34 @@ ul {
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background-color: #1F2937; /* Dark Charcoal Grey */
   color: white;
-  box-shadow: 0 4px 14px rgba(44, 98, 176, 0.3);
+  box-shadow: 0 4px 14px rgba(31, 41, 55, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-light);
+  background-color: #374151; /* Medium Dark Grey */
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(44, 98, 176, 0.4);
+  box-shadow: 0 6px 20px rgba(31, 41, 55, 0.4);
   color: white;
 }
 
 .btn-outline {
-  border-color: white;
-  color: white;
+  border-color: #1F2937;
+  color: #1F2937;
   background: transparent;
 }
 
 .btn-outline:hover {
-  background: white;
-  color: var(--primary);
+  background: #1F2937;
+  color: white;
 }
 
 /* =========================================
    NOTICE BANNER
 ========================================= */
 .notice-banner {
-  background-color: var(--primary);
+  background-color: #1F2937;
   color: white;
   padding: 0.6rem 0;
   text-align: center;
@@ -268,14 +268,17 @@ ul {
   z-index: 1001;
   font-size: 0.85rem;
   letter-spacing: 0.03em;
-  box-shadow: 0 4px 15px rgba(44, 98, 176, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .notice-link {
-  color: #ff5a79; /* High-contrast bright red */
+  color: #ffffff;
   text-decoration: underline;
   margin-left: 1rem;
   font-weight: 700;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
   transition: opacity 0.2s;
 }
 
@@ -505,9 +508,9 @@ ul {
 .badge {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  background: rgba(0, 168, 150, 0.2);
-  border: 2px solid rgba(0, 168, 150, 0.7);
-  color: var(--secondary); /* Brand red for high contrast */
+  background: rgba(186, 32, 33, 0.08);
+  border: 2px solid rgba(186, 32, 33, 0.7);
+  color: #ba2021; /* Logo Crimson Red */
   border-radius: 50px;
   font-size: 1.25rem; /* Bigger size */
   font-weight: 900; /* Ultra bold text */
@@ -636,13 +639,13 @@ ul {
 }
 
 .stat-card.active-card {
-  background: var(--primary);
+  background: #1F2937;
   color: white;
-  border-bottom-color: var(--secondary);
+  border-bottom-color: #ba2021;
 }
 
 .stat-card.active-card p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.85);
 }
 
 .stat-card.active-card h4 {
@@ -664,7 +667,7 @@ ul {
 
 .stat-card.active-card .stat-icon {
   background: rgba(255,255,255,0.1);
-  color: var(--secondary);
+  color: #ba2021;
 }
 
 .stat-info h4 {
@@ -720,7 +723,7 @@ ul {
   position: absolute;
   bottom: -20px;
   right: -20px;
-  background: var(--primary);
+  background: #1F2937;
   color: white;
   padding: 1.5rem;
   border-radius: 12px;
@@ -736,12 +739,13 @@ ul {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--secondary);
+  color: #ba2021;
 }
 
 .experience-badge .text {
   font-weight: 500;
   font-size: 0.875rem;
+  color: white;
 }
 
 .about-features {
@@ -852,8 +856,8 @@ ul {
   width: 60px;
   height: 60px;
   border-radius: 12px;
-  background: rgba(0, 168, 150, 0.1);
-  color: var(--secondary);
+  background: rgba(186, 32, 33, 0.08);
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -953,8 +957,8 @@ ul {
 
 /* Glassmorphism Hours Card */
 .opening-hours-card {
-  background: rgba(0, 59, 115, 0.03);
-  border: 1px solid rgba(0, 59, 115, 0.1);
+  background: rgba(186, 32, 33, 0.03);
+  border: 1px solid rgba(186, 32, 33, 0.12);
   border-radius: 20px;
   padding: 2.5rem;
   position: relative;
@@ -1377,4 +1381,71 @@ ul {
 @keyframes fadeInTab {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Disabled Navigation & Coming Soon Badges */
+.disabled-nav {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+.coming-soon-badge {
+  font-size: 0.65rem;
+  background: rgba(186, 32, 33, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(186, 32, 33, 0.3);
+  padding: 0.1rem 0.45rem;
+  border-radius: 50px;
+  margin-left: 0.25rem;
+  font-weight: 700;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Content Editor Preview Bar */
+.editor-bar {
+  background: #1F2937;
+  color: white;
+  padding: 0.75rem 0;
+  border-bottom: 3px solid var(--primary);
+  position: relative;
+  z-index: 2000;
+  font-size: 0.9rem;
+}
+
+.editor-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.editor-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #F3F4F6;
+}
+
+.editor-tag i {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.editor-exit-btn {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: var(--transition-fast);
+}
+
+.editor-exit-btn:hover {
+  background: var(--primary);
+  color: white;
 }

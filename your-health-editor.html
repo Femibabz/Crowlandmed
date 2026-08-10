@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[EDITOR PREVIEW] Your Health Resources | Lundys Lane Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .health-header {
+        padding: 3rem 0;
+        background: var(--bg-light);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+      .health-title {
+        font-family: var(--font-brand);
+        font-size: 3rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      .health-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+      }
+      .health-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+        margin-top: 3rem;
+        align-items: start;
+      }
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(0,0,0,0.05);
+      }
+      .sidebar-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .sidebar-link {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        color: var(--text-main);
+        font-weight: 500;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .sidebar-link:hover, .sidebar-link.active {
+        background: rgba(186, 32, 33, 0.08);
+        color: var(--primary);
+      }
+      .content-area {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-bottom: 5rem;
+      }
+      .content-section {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(0,0,0,0.03);
+        scroll-margin-top: 100px;
+      }
+      .content-section h3 {
+        font-family: var(--font-brand);
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 1.25rem;
+        border-left: 4px solid var(--secondary);
+        padding-left: 0.75rem;
+      }
+      .content-section p {
+        margin-bottom: 1.25rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+      }
+      .resource-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .resource-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--secondary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .resource-link:hover {
+        color: var(--primary);
+        transform: translateX(3px);
+      }
+      .back-btn {
+        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .back-btn:hover {
+        transform: translateX(-5px);
+      }
+      .fhg-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+      }
+      .fhg-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-between;
+      }
+      .fhg-list li:last-child {
+        border-bottom: none;
+      }
+      .fhg-list strong {
+        color: var(--primary);
+      }
+      .doctors-schedule-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      @media (max-width: 992px) {
+        .doctors-schedule-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .health-container {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: relative;
+          top: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grainy-overlay"></div>
+    
+    <!-- Secret Content Editor Top Bar -->
+    <div class="editor-bar">
+      <div class="editor-bar-content container">
+        <div class="editor-tag">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span><strong>Backend Content Editor Mode</strong> — Use this drafting view to inspect layouts & write custom, non-plagiarized text.</span>
+        </div>
+        <a href="/" class="editor-exit-btn"><i class="fa-solid fa-xmark"></i> Exit Preview</a>
+      </div>
+    </div>
+
+    <nav class="navbar scrolled" style="top: 0;">
+      <div class="nav-container container">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Lundys Lane Medical Centre" class="logo-img" />
+          <span class="logo-subtitle">Walk-In Clinic</span>
+        </a>
+      </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+      <section class="health-header">
+        <div class="container">
+          <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+          <h1 class="health-title">Your Health Resources</h1>
+          <p class="health-subtitle">Evidence-based clinical guidelines, patient education, and support tools to empower your wellness journey.</p>
+        </div>
+      </section>
+
+      <div class="container health-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+          <nav class="sidebar-menu">
+            <a href="#choosing-wisely" class="sidebar-link active">Choosing Wisely</a>
+            <a href="#deprescribing" class="sidebar-link">Deprescribing</a>
+            <a href="#metabolic-health" class="sidebar-link">Metabolic Health</a>
+            <a href="#mental-health" class="sidebar-link">Mental Health</a>
+            <a href="#chronic-pain" class="sidebar-link">Chronic Pain</a>
+            <a href="#smoking-cessation" class="sidebar-link">Smoking Cessation</a>
+            <a href="#kids-health" class="sidebar-link">Kids Health</a>
+            <a href="#after-hours" class="sidebar-link">Clinic Hours</a>
+          </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content-area">
+          <!-- Section 1 -->
+          <section id="choosing-wisely" class="content-section">
+            <h3>Choosing Wisely Canada</h3>
+            <p>Learn how to receive the best care through evidence-based information, reducing potentially harmful or wasteful investigations and practices, and focusing resources on what truly works.</p>
+            <div class="resource-links">
+              <a href="https://choosingwiselycanada.org/more-is-not-always-better/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> More is Not Always Better <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://choosingwiselycanada.org/patient-pamphlets" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Patient Pamphlets <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 2 -->
+          <section id="deprescribing" class="content-section">
+            <h3>Medication Safety & Deprescribing</h3>
+            <p>The Canadian Deprescribing Network is dedicated to raising awareness of medication safety, deprescribing, and safer alternatives to risky medications. Deprescribing is the process of safely reducing or stopping medications that may no longer be needed or may be causing harm.</p>
+            <div class="resource-links">
+              <a href="https://www.deprescribingnetwork.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Canadian Deprescribing Network <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 3 -->
+          <section id="metabolic-health" class="content-section">
+            <h3>Metabolic Health & Diabetes</h3>
+            <p>Access guidelines and coaching services to optimize your blood sugar, manage metabolic conditions, and learn about healthy dietary practices.</p>
+            <div class="resource-links">
+              <a href="https://www.diabetes.ca" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Diabetes Canada Website <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.torontometabolicclinic.com" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Toronto Metabolic Clinic <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic;">Suggested Reading: "Obesity Code" and "Diabetes Code" by Dr. Jason Fung, "The Pioppi Diet" by Dr. Aseem Malhotra.</p>
+          </section>
+
+          <!-- Section 4 -->
+          <section id="mental-health" class="content-section">
+            <h3>Mental Health & CBT Resources</h3>
+            <p>Cognitive Behavioural Therapy (CBT) is an effective, evidence-based approach to managing depression, anxiety, stress, and worry. Explore free programs available to Ontario residents:</p>
+            <div class="resource-links">
+              <a href="https://www.bouncebackontario.ca" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Bounce Back Ontario <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://togetherall.com" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Togetherall 24/7 Support <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.camh.ca" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> CAMH Online Resources <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 5 -->
+          <section id="chronic-pain" class="content-section">
+            <h3>Chronic Pain & Back Care</h3>
+            <p>Explore spine assessment guides, back care resources, and pain management guides to help you live a full and comfortable life.</p>
+            <div class="resource-links">
+              <a href="http://www.isaec.org" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Inter-Professional Spine Assessment Clinics <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="http://backcarecanada.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Back Care Canada <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="http://tapmipain.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> TAPMI Pain Management U Online <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 6 -->
+          <section id="smoking-cessation" class="content-section">
+            <h3>Smoking Cessation</h3>
+            <p>Access free support systems, nicotine patches, and coaching programs to help you quit smoking successfully:</p>
+            <div class="resource-links">
+              <a href="https://www.ontario.ca/page/support-quit-smoking" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Ontario Smoking Cessation Services <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 7 -->
+          <section id="kids-health" class="content-section">
+            <h3>Kids & Family Health</h3>
+            <p>Trusted resources for child development, infant care, pediatric health, and injury prevention:</p>
+            <div class="resource-links">
+              <a href="https://www.caringforkids.cps.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> Caring for Kids (Cdn Paediatric Society) <i class="fa-solid fa-chevron-right"></i></a>
+              <a href="https://www.aboutkidshealth.ca/" class="resource-link" target="_blank"><i class="fa-solid fa-square-arrow-up-right"></i> AboutKidsHealth (SickKids) <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </section>
+
+          <!-- Section 8 -->
+          <section id="after-hours" class="content-section">
+            <h3>Clinic Physicians & Operating Hours</h3>
+            <p>Our physicians, Dr. Akinpelu Babatunde (Dr. B), Dr. Bayo, and Dr. Jane Doe, are available during the following hours:</p>
+            
+            <div class="doctors-schedule-grid">
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. B</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span>10:00 am - 6:00 pm</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span>2:00 pm - 6:00 pm</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span>10:00 am - 5:00 pm</span></li>
+                  <li><span><strong>Thursday</strong></span> <span>3:00 pm - 6:00 pm</span></li>
+                  <li><span><strong>Friday</strong></span> <span>10:00 am - 5:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>10:00 am - 1:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Bayo</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Thursday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Friday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>9:00 am - 4:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Jane Doe</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Thursday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Friday</strong></span> <span>12:00 pm - 8:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>12:00 pm - 8:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span>1:00 pm - 5:00 pm</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo">
+            <img src="/logo.png" alt="Lundys Lane Medical Centre Logo" class="logo-img" style="height: 48px; width: auto;" />
+            <span class="logo-subtitle">Walk-In Clinic</span>
+          </a>
+          <p class="footer-desc">Delivering compassionate, patient-centered healthcare to individuals and families in our community through trust and respect.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#services">Our Services</a></li>
+            <li><a href="/#doctors">Physicians In Clinic</a></li>
+            <li><a href="javascript:void(0)" class="disabled-nav">Your Health Resources <span class="coming-soon-badge">Soon</span></a></li>
+            <li><a href="javascript:void(0)" class="disabled-nav">Patient Policies <span class="coming-soon-badge">Soon</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>7637 Lundys Lane,<br/>Niagara Falls, ON L2H 1H2</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+12899323500">+1 (289) 932-3500</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@lundysmed.ca">info@lundysmed.ca</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Lundys Lane Medical Centre. All rights reserved.</p>
+          <p class="designed-by">Designed with <i class="fa-solid fa-heart" style="color: #ba2021;"></i> for your health.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Tab-Switching Script: Only renders clicked section -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.sidebar-link');
+
+        function activateTab(targetId) {
+          const cleanId = targetId.replace('#', '');
+          let targetSection = document.getElementById(cleanId);
+          
+          if (!targetSection) {
+            targetSection = document.getElementById('choosing-wisely');
+          }
+
+          sections.forEach(section => section.classList.remove('active'));
+          navLinks.forEach(link => link.classList.remove('active'));
+
+          if (targetSection) {
+            targetSection.classList.add('active');
+          }
+
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${targetSection.id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+
+        const initialHash = window.location.hash || '#choosing-wisely';
+        activateTab(initialHash);
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetHash = link.getAttribute('href');
+            activateTab(targetHash);
+            window.history.pushState(null, null, targetHash);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

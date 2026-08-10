@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[EDITOR PREVIEW] Patient Policies | Lundys Lane Medical Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .policy-header {
+        padding: 3rem 0;
+        background: var(--bg-light);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+      .policy-title {
+        font-family: var(--font-brand);
+        font-size: 3rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      .policy-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+      }
+      .policy-container {
+        max-width: 800px;
+        margin: 3rem auto 5rem;
+      }
+      .policy-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(0,0,0,0.03);
+        margin-bottom: 2rem;
+      }
+      .policy-card h3 {
+        font-family: var(--font-brand);
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .policy-card h3 i {
+        color: var(--secondary);
+        font-size: 1.5rem;
+      }
+      .policy-card p {
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+      }
+      .policy-card p:last-child {
+        margin-bottom: 0;
+      }
+      .back-btn {
+        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+      .back-btn:hover {
+        transform: translateX(-5px);
+      }
+      .alert-card {
+        border-left: 4px solid #cf2e2e;
+      }
+      .alert-card h3 i {
+        color: #cf2e2e;
+      }
+      .fhg-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0;
+      }
+      .fhg-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-between;
+      }
+      .fhg-list li:last-child {
+        border-bottom: none;
+      }
+      .fhg-list strong {
+        color: var(--primary);
+      }
+      .doctors-schedule-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      @media (max-width: 992px) {
+        .doctors-schedule-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grainy-overlay"></div>
+    
+    <!-- Secret Content Editor Top Bar -->
+    <div class="editor-bar">
+      <div class="editor-bar-content container">
+        <div class="editor-tag">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span><strong>Backend Content Editor Mode</strong> — Private drafting view for Lundys Lane Medical Centre. Review policy sections & craft original non-plagiarized copy.</span>
+        </div>
+        <a href="/" class="editor-exit-btn"><i class="fa-solid fa-xmark"></i> Exit Preview</a>
+      </div>
+    </div>
+
+    <nav class="navbar scrolled" style="top: 0;">
+      <div class="nav-container container">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Lundys Lane Medical Centre" class="logo-img" />
+          <span class="logo-subtitle">Walk-In Clinic</span>
+        </a>
+      </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+      <section class="policy-header">
+        <div class="container">
+          <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+          <h1 class="policy-title">Patient Policies</h1>
+          <p class="policy-subtitle">Important disclaimers, usage boundaries, emergency instructions, and care protocols.</p>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="policy-container">
+          <!-- Policy 1: Emergency -->
+          <div class="policy-card alert-card">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Medical Emergency</h3>
+            <p><strong>Do not use this Website for medical emergencies.</strong> If you have a medical emergency, call a physician, qualified healthcare provider, or dial <strong>911</strong> immediately.</p>
+            <p>Under no circumstances should you attempt self-treatment or treatment of anyone else based on anything you have seen or read on this Website.</p>
+          </div>
+
+          <!-- Policy 2: Not Medical Advice -->
+          <div class="policy-card">
+            <h3><i class="fa-solid fa-stethoscope"></i> Not Medical Advice</h3>
+            <p>The content provided on this Website is for informational purposes only. It is not professional medical advice, diagnosis, treatment, or care, nor is it intended to be a substitute for professional care.</p>
+            <p>Always seek the advice of a qualified physician properly licensed to practice medicine or general healthcare in your jurisdiction concerning any questions you may have regarding any content obtained from this Website or any medical condition you believe may be relevant. Never disregard professional medical advice or delay in seeking it because of something you read on this Website.</p>
+          </div>
+
+          <!-- Policy 3: Physician-Patient Relationship -->
+          <div class="policy-card">
+            <h3><i class="fa-solid fa-user-doctor"></i> No Physician-Patient Relationship</h3>
+            <p>The presentation of information on this Website does not establish a physician-patient relationship between you and Lundys Lane Medical Centre or any of its staff.</p>
+            <p>A physician-patient relationship is established strictly when you undergo formal intake, registration, and consult directly with our physicians during scheduled clinical hours.</p>
+          </div>
+
+          <!-- Policy 4: Unsolicited Email Communications -->
+          <div class="policy-card">
+            <h3><i class="fa-solid fa-envelope-open-text"></i> Email & Electronic Communications</h3>
+            <p>Email communications sent directly to individual staff or clinic email addresses may not be secure. Please do not send confidential clinical information or urgent medical requests via unencrypted general email.</p>
+            <p>For official patient intake, please use our secure <a href="/register" style="color: var(--primary); font-weight: 600;">Patient Registration Form</a> or contact our administrative line at <a href="tel:+12899323500" style="color: var(--primary); font-weight: 600;">+1 (289) 932-3500</a>.</p>
+          </div>
+
+          <!-- Policy 5: Urgent Care Services -->
+          <div class="policy-card">
+            <h3><i class="fa-solid fa-house-medical"></i> After-Hours & Emergency Care</h3>
+            <p>If you require urgent medical advice or support when our clinic is closed:</p>
+            <p>
+              <strong>Health811 (Ontario Health Advice):</strong> Call <strong>811</strong> for free 24/7 access to a Registered Nurse.<br>
+              <strong>Toll-free TTY:</strong> <a href="tel:+18667970007">1-866-797-0007</a>
+            </p>
+          </div>
+
+          <!-- Policy 6: Clinic Hours -->
+          <div class="policy-card">
+            <h3><i class="fa-solid fa-user-group"></i> Clinic Physicians & Operating Hours</h3>
+            <p>Our physicians, Dr. Akinpelu Babatunde (Dr. B), Dr. Bayo, and Dr. Jane Doe, are available during the following hours:</p>
+            
+            <div class="doctors-schedule-grid">
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. B</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span>10:00 am - 6:00 pm</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span>2:00 pm - 6:00 pm</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span>10:00 am - 5:00 pm</span></li>
+                  <li><span><strong>Thursday</strong></span> <span>3:00 pm - 6:00 pm</span></li>
+                  <li><span><strong>Friday</strong></span> <span>10:00 am - 5:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>10:00 am - 1:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Bayo</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Thursday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Friday</strong></span> <span>9:00 am - 8:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>9:00 am - 4:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="color: var(--primary); font-family: var(--font-brand); font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.25rem;">Dr. Jane Doe</h4>
+                <ul class="fhg-list" style="margin: 0;">
+                  <li><span><strong>Monday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Tuesday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Wednesday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Thursday</strong></span> <span style="color: #cf2e2e; font-weight: 600;">Closed</span></li>
+                  <li><span><strong>Friday</strong></span> <span>12:00 pm - 8:00 pm</span></li>
+                  <li><span><strong>Saturday</strong></span> <span>12:00 pm - 8:00 pm</span></li>
+                  <li><span><strong>Sunday</strong></span> <span>1:00 pm - 5:00 pm</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo">
+            <img src="/logo.png" alt="Lundys Lane Medical Centre Logo" class="logo-img" style="height: 48px; width: auto;" />
+            <span class="logo-subtitle">Walk-In Clinic</span>
+          </a>
+          <p class="footer-desc">Delivering compassionate, patient-centered healthcare to individuals and families in our community through trust and respect.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#services">Our Services</a></li>
+            <li><a href="/#doctors">Physicians In Clinic</a></li>
+            <li><a href="javascript:void(0)" class="disabled-nav">Your Health Resources <span class="coming-soon-badge">Soon</span></a></li>
+            <li><a href="javascript:void(0)" class="disabled-nav">Patient Policies <span class="coming-soon-badge">Soon</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>7637 Lundys Lane,<br/>Niagara Falls, ON L2H 1H2</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+12899323500">+1 (289) 932-3500</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@lundysmed.ca">info@lundysmed.ca</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Lundys Lane Medical Centre. All rights reserved.</p>
+          <p class="designed-by">Designed with <i class="fa-solid fa-heart" style="color: #ba2021;"></i> for your health.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
