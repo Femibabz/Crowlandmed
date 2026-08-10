@@ -272,10 +272,10 @@ ul {
 }
 
 .notice-link {
-  color: white;
+  color: #ff5a79; /* High-contrast bright red */
   text-decoration: underline;
   margin-left: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: opacity 0.2s;
 }
 
@@ -493,11 +493,11 @@ ul {
   display: inline-block;
   padding: 0.5rem 1rem;
   background: rgba(0, 168, 150, 0.2);
-  border: 1px solid rgba(0, 168, 150, 0.5);
-  color: var(--secondary-light);
+  border: 1.5px solid rgba(0, 168, 150, 0.6);
+  color: var(--secondary); /* Brand red for high contrast */
   border-radius: 50px;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 800; /* Extra bold text */
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
   white-space: nowrap;
